@@ -1,0 +1,52 @@
+ <div class="contaner">
+	<h1>User Accounts</h1>
+
+<body style="color: white;">
+<table id="userTable" class="table table-striped" cellspacing="0" width="100%" >
+	<thead>
+		<tr>
+      <th>User Name</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Contact</th>
+			<th>Primary Account</th>
+			<th>Savings Account</th>
+			</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let detail of userAccountDetails">
+      <td>{{detail.user.username}}</td>
+			<td>{{detail.user.firstName}}</td>
+			<td>{{detail.user.lastName}}</td>
+			<td>{{detail.user.email}}</td>
+			<td>{{detail.user.contact}}</td>
+			<td>
+				<div *ngIf="detail.primaryAccount" (click)="onSelectPrimary(detail.primaryAccount.accno)">{{detail.primaryAccount.accno}}</div>
+				<div *ngIf="!detail.primaryAccount">
+					<button class="btn btn-success btn-teal" (click)="openGeneratePAccountDialog(detail.user.userid)"  >Generate Account</button>
+			
+				</div>
+	
+			</td>
+			<td>
+				<div *ngIf="detail.savingsAccount" (click)="onSelectSavings(detail.savingsAccount.accno)">{{detail.savingsAccount.accno}}</div>
+				<div *ngIf="!detail.savingsAccount">
+					<button class="btn btn-success btn-teal"  (click)="openGenerateSAccountDialog(detail.user.userid)">Generate Account</button>
+				</div>
+				
+			</td>
+		
+			<!-- <td><p (click)="onSelectPrimary(detail.primaryAccount.accno)" style="cursor: pointer;">{{user.primaryAccount?.accno}}</p></td>
+			<td><p (click)="onSelectSavings(user.savingsAccount.accno)" style="cursor: pointer;">{{user.savingsAccount?.accno}}</p></td>
+			 <td [hidden]="!user.enabled"><a (click)="enableUser(user.email)" style="cursor: pointer;">Enable</a></td>
+			<td [hidden]="user.enabled"><a (click)="disableUser(user.id)" style="cursor: pointer;">Disable</a></td> -->
+		</tr>
+	</tbody>
+</table>   
+</body>
+	
+
+ </div>
+
+ 

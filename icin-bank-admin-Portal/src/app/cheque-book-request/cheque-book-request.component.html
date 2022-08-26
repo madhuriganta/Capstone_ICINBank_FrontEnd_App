@@ -1,0 +1,36 @@
+<h1>Cheque Book Requests</h1>
+
+<body style="color: white;">
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Request Id</th>
+			<th>First Name</th>
+      <th>Account </th>
+			<th>Date</th>
+			<th>No_of_pages</th>
+      <th>Request_status</th>
+		</tr>
+	</thead>
+	<tbody>
+	 <tr *ngFor="let chequeBookRequest of chequeBookRequestList" >
+			<td>{{chequeBookRequest.id}}</td>
+      <!-- <td>{{chequeBookRequest["user"]["firstName"]}}</td>
+      <td>{{chequeBookRequest.accType}}</td>
+      <td>{{chequeBookRequest.date}}</td>
+      <td>{{chequeBookRequest.no_of_pages}}</td>
+      <td>{{chequeBookRequest.request_status}}</td> -->
+
+			<!-- <td>{{chequeBookRequest["user"]["firstName"]}} {{chequeBookRequest["user"]["lastName"]}}</td>
+			<td>{{chequeBookRequest["user"]["contact"]}}</td>
+			<td>{{chequeBookRequest["user"]["primaryAccount"]["accno"]}}</td> -->
+			<!-- <td> <p *ngIf="chequeBookRequest['accepted']" > Confirmed</p> 
+				<p *ngIf="!chequeBookRequest['accepted']" > Pending</p>
+			</td> 
+ 
+      <td [hidden]="chequeBookRequest.confirmed"><a *ngIf="!chequeBookRequest['accepted']" (click)="confirmChequeBookRequest(chequeBookRequest.id)" style="cursor: pointer;">Confirm</a></td>
+		 <td [hidden]="!user.enabled"><a (click)="disableUser(user.username)" style="cursor: pointer;">Disable</a></td> -->
+		</tr> 
+	</tbody>
+</table>   
+</body>

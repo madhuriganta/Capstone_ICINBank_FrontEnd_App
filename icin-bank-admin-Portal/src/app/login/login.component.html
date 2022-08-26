@@ -1,0 +1,58 @@
+
+<section class="m-5">
+  <div class="mask d-flex align-items-center">
+    <div class="container-xl">
+      <div class="row d-flex justify-content-center align-items-center h-80">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-5">Please sign in</h2>
+
+              <form [hidden]="loggedIn" (ngSubmit)="onSubmit()">
+                <!-- <h6 class="text-danger">{{msg}}</h6> -->
+                 <div class="form-group mb-4">
+                    <input 
+                    type="text" 
+                    class="form-control form-control-lg" 
+                    placeholder="Username"
+                    name="username"
+                    [(ngModel)]="username"
+                    required="required"
+                             
+                    />
+                                    
+                </div>
+
+                <div class="form-group mb-4">
+                    <input type="password"
+                         class="form-control form-control-lg"
+                         placeholder="Password"
+                         name="password"  
+                         required="required"
+                         [(ngModel)]="password"
+                         >
+                                           
+                  </div>
+           
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-teal btn-lg " >Sign In</button>
+                </div>
+                    <label style="color: black;" *ngIf="invalidCred">Invalid credentials.</label>
+              </form>
+              <div [hidden]="!loggedIn">
+                <h2>Welcome to Admin Portal!</h2>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  

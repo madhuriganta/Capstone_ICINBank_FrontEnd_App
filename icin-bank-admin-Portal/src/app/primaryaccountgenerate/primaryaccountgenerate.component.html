@@ -1,0 +1,14 @@
+<p>PrimaryAccount: </p>
+<div>
+  <input type="number"  class="form-control "
+                         placeholder="Enter Balance Amount"
+                         name="balance"  
+                         required="required"
+                         [(ngModel)]="balance"
+                         />
+ 
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button class="btn btn-success btn-teal" (click)="generatePrimaryAccount(data.userId)" >Generate Account</button>
+</div>

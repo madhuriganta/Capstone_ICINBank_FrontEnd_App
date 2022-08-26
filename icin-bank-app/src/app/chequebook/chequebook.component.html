@@ -1,0 +1,69 @@
+<!-- 
+<div class="container col-xs-4">
+  <h3 style="text-align: center">Request Cheque Book</h3>
+  <div class="form-group">
+    <div style="text-align: center" class="form-group">
+      <label>Account Number :&nbsp;</label> <label>{{ requestingAccNo }}</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>ChequeBook pages</label>
+    <br />
+    <select class="form-control" (change)="filterSelected($event.target.value)">
+      <option *ngFor="let p of pages" [value]="p.value">
+        {{ p.name }}
+      </option>
+    </select>
+    <br />
+    <button (click)="setOption()" class="btn btn-info form-control">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span
+      >Request Chequebook
+    </button>
+    <br />
+  </div>
+</div> -->
+<section class="m-5">
+  <div class="mask d-flex align-items-center">
+    <div class="container-xl">
+      <div class="row d-flex justify-content-center align-items-center h-80">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-5">Chequebook Request</h2>
+
+              <form  [formGroup]="chequeBookRequestForm">
+               
+                <div class="form-group mb-4">
+                  <label for="accountType">Please select your account type</label>
+                  <select class="form-control form-control-lg" id="accountType" name="accountType">
+                    <option>Primary Account</option>
+                    <option>Saving Account</option>
+                  </select>
+                </div>
+                <div class="form-group mb-4">
+                  <label>ChequeBook pages</label>
+                  <select class="form-control" name="no_Of_Pages"  >
+                    
+                    <option value="1">10</option>
+                    <option value="2">20</option>
+                    <option value="3">30</option>
+                   
+                   
+                  </select>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-teal btn-lg "(click)="onSubmit()">Request Chequebook</button>
+                </div>
+
+                
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

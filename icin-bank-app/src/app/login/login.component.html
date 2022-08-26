@@ -1,0 +1,61 @@
+<section class="m-5">
+  <div class="mask d-flex align-items-center">
+    <div class="container-xl">
+      <div class="row d-flex justify-content-center align-items-center h-80">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-5">Please sign in</h2>
+
+              <form [formGroup]="loginForm" (submit)="loginUser()">
+                <h6 class="text-danger">{{msg}}</h6>
+                 <div class="form-group mb-4">
+                    <input 
+                    type="text" 
+                    class="form-control form-control-lg" 
+                    placeholder="Username"
+                    name="username"
+                    formControlName="username"
+                    required="required"
+                    [ngClass]="{ 'is-invalid': submitted && fval['username'].errors }"          
+                    />
+                    <div *ngIf="fval['username'].errors" class="invalid-feedback">
+                      <div *ngIf="fval['username'].errors['required']">    <p class="alert alert-warning mt-2" >Username is required</p> </div>
+                    </div>
+                   
+                    
+                </div>
+
+                <div class="form-group mb-4">
+                    <input type="password"
+                         class="form-control form-control-lg"
+                         placeholder="Password"
+                         name="password"  
+                         required="required"
+                         formControlName="password"
+                           [ngClass]="{ 'is-invalid': submitted && fval['password'].errors }" />
+                         <div *ngIf="fval['password'].errors" class="invalid-feedback">
+                           <div *ngIf="fval['password'].errors['required']">    <p class="alert alert-warning mt-2" >Password is required</p> </div>
+                         </div>
+                    
+                  </div>
+           
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-teal btn-lg " >Sign In</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Dont have an Account?  <a href="/registration"
+                    class="fw-bold text-body" ><u>Register here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
